@@ -11,3 +11,6 @@ chess: $(OBJ)
 
 run: chess
 	./chess
+
+clean:
+	rm -f $(OBJ) chess
