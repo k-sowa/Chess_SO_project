@@ -28,14 +28,14 @@ int isCheck(char color, struct Piece board[BOARD_SIZE][BOARD_SIZE]) {
     return 0;
 }
 
-int isCheckmate(char color, struct Piece board[BOARD_SIZE][BOARD_SIZE]) {
+/*int isCheckmate(char color, struct Piece board[BOARD_SIZE][BOARD_SIZE]) {
     if (!isCheck(color, board)) {
         return 0;
     }
     // do zrobienia
     return 1;
 }
-
+*/
 int isStalemate(char color, struct Piece board[BOARD_SIZE][BOARD_SIZE]) {
     if (isCheck(color, board)) {
         return 0;

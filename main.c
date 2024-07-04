@@ -119,11 +119,6 @@ int main(void) {
         char color;
         char oponent[BUFFER];
         char notOponent[BUFFER];
-        #ifdef _WIN32
-            system("cls");
-        #else
-            system("clear");
-        #endif
         printBoard(board, boardSide);
         getMove(move);
         printf("Wpisano ruch: '%s'\n", move);
@@ -145,18 +140,24 @@ int main(void) {
             strcpy(notOponent, "czarni");
         }
 
-        if (isCheckmate(color, board)) {
+        /*if (isCheckmate(color, board)) {
             printf("************************************************************\n");
             printf("Szach mat! Wygrali %s!\n",notOponent);
             printf("************************************************************\n");
             break;
         }
+	*/
         if (isCheck(color, board)) {
             printf("************************************************************\n");
             printf("Król pionków %s jest szachowany!\n",oponent);
             printf("************************************************************\n");
         }
         boardSide = !boardSide;
+        #ifdef _WIN32
+            system("cls");
+        #else
+            system("clear");
+        #endif
     }
 
     return 0;
